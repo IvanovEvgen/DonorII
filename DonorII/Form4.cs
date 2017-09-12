@@ -10,25 +10,24 @@ using System.Windows.Forms;
 
 namespace DonorII
 {
-    public partial class Form1 : Form
+    public partial class Form4 : Form
     {
-        public Form1()
+        public Form4()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            var f = new Form2();
-            f.ShowDialog();
+
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void label5_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Света");
+
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void Form4_Load(object sender, EventArgs e)
         {
 
         }

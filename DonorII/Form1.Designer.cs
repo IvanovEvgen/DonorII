@@ -34,8 +34,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -71,7 +71,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(27, 10);
+            this.pictureBox1.Location = new System.Drawing.Point(24, 163);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(105, 85);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -94,19 +94,10 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(592, 111);
             this.panel1.TabIndex = 4;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel2.Location = new System.Drawing.Point(0, 345);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(592, 51);
-            this.panel2.TabIndex = 5;
             // 
             // label1
             // 
@@ -118,6 +109,15 @@
             this.label1.Size = new System.Drawing.Size(222, 47);
             this.label1.TabIndex = 6;
             this.label1.Text = "Донор 2017";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel2.Location = new System.Drawing.Point(0, 345);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(592, 51);
+            this.panel2.TabIndex = 5;
             // 
             // button4
             // 
@@ -138,6 +138,7 @@
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(591, 392);
             this.Controls.Add(this.button4);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button3);
