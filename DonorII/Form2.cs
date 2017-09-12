@@ -22,5 +22,11 @@ namespace DonorII
             var f = new Form3();
             f.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var f = new Form4();
+            f.ShowDialog();
+        }
     }
 }
