@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -68,23 +68,6 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel2.Location = new System.Drawing.Point(-4, 352);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(600, 40);
-            this.panel2.TabIndex = 1;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(17, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Назад";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -95,6 +78,23 @@
             this.label1.Size = new System.Drawing.Size(124, 25);
             this.label1.TabIndex = 7;
             this.label1.Text = "Донор 2017";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(17, 19);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Назад";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel2.Location = new System.Drawing.Point(-4, 352);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(600, 40);
+            this.panel2.TabIndex = 1;
             // 
             // label2
             // 
@@ -219,6 +219,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(130, 20);
             this.textBox1.TabIndex = 5;
+            this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
             // 
             // textBox2
             // 
@@ -226,6 +227,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(130, 20);
             this.textBox2.TabIndex = 5;
+            this.textBox2.Enter += new System.EventHandler(this.textBox2_Enter);
             // 
             // textBox3
             // 
@@ -233,6 +235,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(130, 20);
             this.textBox3.TabIndex = 5;
+            this.textBox3.Enter += new System.EventHandler(this.textBox3_Enter);
             // 
             // textBox4
             // 
@@ -240,6 +243,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(130, 20);
             this.textBox4.TabIndex = 5;
+            this.textBox4.Enter += new System.EventHandler(this.textBox4_Enter);
             // 
             // textBox5
             // 
@@ -247,6 +251,7 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(130, 20);
             this.textBox5.TabIndex = 5;
+            this.textBox5.Enter += new System.EventHandler(this.textBox5_Enter);
             // 
             // comboBox1
             // 
@@ -255,6 +260,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 6;
+            this.comboBox1.Text = "Мужской";
             // 
             // comboBox2
             // 
@@ -263,6 +269,7 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
             this.comboBox2.TabIndex = 6;
+            this.comboBox2.Text = "Не здоров";
             // 
             // comboBox3
             // 
@@ -271,6 +278,7 @@
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(121, 21);
             this.comboBox3.TabIndex = 6;
+            this.comboBox3.Text = "III";
             // 
             // dateTimePicker1
             // 
