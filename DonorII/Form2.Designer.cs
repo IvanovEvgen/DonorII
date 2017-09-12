@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,6 +47,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(607, 60);
             this.panel1.TabIndex = 5;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button3.Location = new System.Drawing.Point(13, 12);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(78, 28);
+            this.button3.TabIndex = 10;
+            this.button3.Text = "Назад";
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -78,6 +90,7 @@
             this.button2.TabIndex = 8;
             this.button2.Text = "Я новый участник";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -90,6 +103,7 @@
             this.button1.TabIndex = 7;
             this.button1.Text = "Я участвовал ранее";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button4
             // 
@@ -102,18 +116,6 @@
             this.button4.TabIndex = 9;
             this.button4.Text = "Login";
             this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.Location = new System.Drawing.Point(13, 12);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(78, 28);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Назад";
-            this.button3.UseVisualStyleBackColor = false;
             // 
             // Form2
             // 

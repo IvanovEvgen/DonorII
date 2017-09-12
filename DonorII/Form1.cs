@@ -19,7 +19,8 @@ namespace DonorII
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Ира");
+            var f = new Form2();
+            f.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
