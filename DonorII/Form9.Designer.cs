@@ -55,6 +55,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -262,6 +263,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Location = new System.Drawing.Point(-7, 0);
@@ -310,6 +312,16 @@
             this.label14.Size = new System.Drawing.Size(256, 32);
             this.label14.TabIndex = 33;
             this.label14.Text = "Оставьте эти поля, незаполненными, \r\nесли вы не хотите изменять пароль.";
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.button4.Location = new System.Drawing.Point(506, 15);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(76, 28);
+            this.button4.TabIndex = 8;
+            this.button4.Text = "Logout";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // Form9
             // 
@@ -380,5 +392,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button button4;
     }
 }
