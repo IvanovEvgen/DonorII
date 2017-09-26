@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DonorII
 {
-    public partial class Form19 : Form
+    public partial class Form110 : Form
     {
-        public Form19()
+        public Form110()
         {
             InitializeComponent();
         }

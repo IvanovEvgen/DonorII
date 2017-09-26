@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace DonorII
 {
-    public partial class Form10 : Form
+    public partial class Form115 : Form
     {
-        public Form10()
+        public Form115()
         {
             InitializeComponent();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
