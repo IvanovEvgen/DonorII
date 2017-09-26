@@ -30,7 +30,6 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,14 +53,15 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(-4, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(600, 60);
@@ -78,16 +78,6 @@
             this.label1.Size = new System.Drawing.Size(124, 25);
             this.label1.TabIndex = 7;
             this.label1.Text = "Донор 2017";
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.button1.Location = new System.Drawing.Point(16, 16);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(78, 28);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Назад";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -290,21 +280,39 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(207, 313);
+            this.button2.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.Location = new System.Drawing.Point(168, 313);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(93, 23);
+            this.button2.Size = new System.Drawing.Size(132, 33);
             this.button2.TabIndex = 8;
             this.button2.Text = "Регистрация";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button3.Location = new System.Drawing.Point(318, 313);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(100, 33);
             this.button3.TabIndex = 8;
             this.button3.Text = "Отмена";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(16, 15);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(78, 28);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Назад";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // Form4
             // 
@@ -348,7 +356,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -373,5 +380,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button1;
     }
 }
