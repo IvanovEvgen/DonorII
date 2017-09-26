@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace DonorII
 {
-    public partial class Form15 : Form
+    public partial class Form119 : Form
     {
-        public Form15()
+        public Form119()
         {
             InitializeComponent();
-        }
-
-        private void Form15_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

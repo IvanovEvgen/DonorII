@@ -62,23 +62,35 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectionBD.cs" />
+    <Compile Include="Form08.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form08.Designer.cs">
+      <DependentUpon>Form08.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form09.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form09.Designer.cs">
+      <DependentUpon>Form09.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form10.cs">
+    <Compile Include="Form110.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form10.Designer.cs">
-      <DependentUpon>Form10.cs</DependentUpon>
+    <Compile Include="Form110.Designer.cs">
+      <DependentUpon>Form110.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form11.cs">
+    <Compile Include="Form111.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form11.Designer.cs">
-      <DependentUpon>Form11.cs</DependentUpon>
+    <Compile Include="Form111.Designer.cs">
+      <DependentUpon>Form111.cs</DependentUpon>
     </Compile>
     <Compile Include="Form111.cs">
       <SubType>Form</SubType>
@@ -89,38 +101,32 @@
     <Compile Include="Form13.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form13.Designer.cs">
-      <DependentUpon>Form13.cs</DependentUpon>
+    <Compile Include="Form114.Designer.cs">
+      <DependentUpon>Form114.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form14.cs">
+    <Compile Include="Form115.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form14.Designer.cs">
-      <DependentUpon>Form14.cs</DependentUpon>
+    <Compile Include="Form115.Designer.cs">
+      <DependentUpon>Form115.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form15.cs">
+    <Compile Include="Form118.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form15.Designer.cs">
-      <DependentUpon>Form15.cs</DependentUpon>
+    <Compile Include="Form118.Designer.cs">
+      <DependentUpon>Form118.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form18.cs">
+    <Compile Include="Form119.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form18.Designer.cs">
-      <DependentUpon>Form18.cs</DependentUpon>
+    <Compile Include="Form119.Designer.cs">
+      <DependentUpon>Form119.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form19.cs">
+    <Compile Include="Form120.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form19.Designer.cs">
-      <DependentUpon>Form19.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form20.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form20.Designer.cs">
-      <DependentUpon>Form20.cs</DependentUpon>
+    <Compile Include="Form120.Designer.cs">
+      <DependentUpon>Form120.cs</DependentUpon>
     </Compile>
     <Compile Include="Form4.cs">
       <SubType>Form</SubType>
@@ -172,14 +178,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form08.resx">
+      <DependentUpon>Form08.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form09.resx">
+      <DependentUpon>Form09.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form10.resx">
-      <DependentUpon>Form10.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form11.resx">
-      <DependentUpon>Form11.cs</DependentUpon>
+    <EmbeddedResource Include="Form110.resx">
+      <DependentUpon>Form110.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form111.resx">
       <DependentUpon>Form111.cs</DependentUpon>
@@ -187,20 +196,20 @@
     <EmbeddedResource Include="Form13.resx">
       <DependentUpon>Form13.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form14.resx">
-      <DependentUpon>Form14.cs</DependentUpon>
+    <EmbeddedResource Include="Form114.resx">
+      <DependentUpon>Form114.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form15.resx">
-      <DependentUpon>Form15.cs</DependentUpon>
+    <EmbeddedResource Include="Form115.resx">
+      <DependentUpon>Form115.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form18.resx">
-      <DependentUpon>Form18.cs</DependentUpon>
+    <EmbeddedResource Include="Form118.resx">
+      <DependentUpon>Form118.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form19.resx">
-      <DependentUpon>Form19.cs</DependentUpon>
+    <EmbeddedResource Include="Form119.resx">
+      <DependentUpon>Form119.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form20.resx">
-      <DependentUpon>Form20.cs</DependentUpon>
+    <EmbeddedResource Include="Form120.resx">
+      <DependentUpon>Form120.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form4.resx">
       <DependentUpon>Form4.cs</DependentUpon>
