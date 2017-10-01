@@ -58,7 +58,7 @@
             this.button3.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.Location = new System.Drawing.Point(13, 12);
+            this.button3.Location = new System.Drawing.Point(20, 13);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(78, 28);
             this.button3.TabIndex = 10;

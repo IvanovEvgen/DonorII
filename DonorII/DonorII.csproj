@@ -62,6 +62,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectionBD.cs" />
+    <Compile Include="Form07.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form07.Designer.cs">
+      <DependentUpon>Form07.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form08.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +178,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form07.resx">
+      <DependentUpon>Form07.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form08.resx">
       <DependentUpon>Form08.cs</DependentUpon>
     </EmbeddedResource>
