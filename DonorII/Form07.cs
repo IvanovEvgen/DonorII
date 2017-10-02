@@ -16,5 +16,15 @@ namespace DonorII
         {
             InitializeComponent();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            panel3.Visible = false;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            panel3.Visible = true;
+        }
     }
 }
