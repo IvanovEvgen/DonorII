@@ -26,5 +26,40 @@ namespace DonorII
         {
             panel3.Visible = true;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var f = new Form1();
+            f.ShowDialog();
+            this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var f = new Form09();
+            f.ShowDialog();
+            this.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            var f = new Form5();
+            f.ShowDialog();
+            this.Close();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            var f = new Form110();
+            f.ShowDialog();
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var f = new Form1();
+            f.ShowDialog();
+            this.Close();
+        }
     }
 }

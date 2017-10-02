@@ -92,6 +92,7 @@
             this.button5.TabIndex = 58;
             this.button5.Text = "Logout";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // pictureBox1
             // 
@@ -115,6 +116,7 @@
             this.button6.TabIndex = 57;
             this.button6.Text = "Назад";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // label1
             // 
