@@ -9,7 +9,7 @@ namespace DonorII
 {
     class ConnectionBD
     {
-        public SqlConnection ConnBD()
+        public static SqlConnection ConnBD()
         {
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ноут\Desktop\DonorII\DonorII\Database1.mdf;Integrated Security=True";

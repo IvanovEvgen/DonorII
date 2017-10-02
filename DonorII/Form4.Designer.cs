@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -54,7 +55,15 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.database1DataSet = new DonorII.Database1DataSet();
+            this.polBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.polTableAdapter = new DonorII.Database1DataSetTableAdapters.PolTableAdapter();
+            this.bloodTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bloodTypeTableAdapter = new DonorII.Database1DataSetTableAdapters.BloodTypeTableAdapter();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.polBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bloodTypeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -230,6 +239,7 @@
             this.textBox2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox2.Location = new System.Drawing.Point(146, 163);
             this.textBox2.Name = "textBox2";
+            this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(152, 27);
             this.textBox2.TabIndex = 5;
             this.textBox2.Enter += new System.EventHandler(this.textBox2_Enter);
@@ -239,6 +249,7 @@
             this.textBox3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox3.Location = new System.Drawing.Point(146, 196);
             this.textBox3.Name = "textBox3";
+            this.textBox3.PasswordChar = '*';
             this.textBox3.Size = new System.Drawing.Size(152, 27);
             this.textBox3.TabIndex = 5;
             this.textBox3.Enter += new System.EventHandler(this.textBox3_Enter);
@@ -263,13 +274,15 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DataSource = this.polBindingSource;
+            this.comboBox1.DisplayMember = "Gender";
             this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(430, 125);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(153, 28);
             this.comboBox1.TabIndex = 6;
-            this.comboBox1.Text = "Мужской";
+            this.comboBox1.ValueMember = "Gender";
             // 
             // comboBox2
             // 
@@ -283,13 +296,15 @@
             // 
             // comboBox3
             // 
+            this.comboBox3.DataSource = this.bloodTypeBindingSource;
+            this.comboBox3.DisplayMember = "BloodType";
             this.comboBox3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(430, 262);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(153, 28);
             this.comboBox3.TabIndex = 6;
-            this.comboBox3.Text = "III";
+            this.comboBox3.ValueMember = "BloodType";
             // 
             // dateTimePicker1
             // 
@@ -310,6 +325,7 @@
             this.button2.TabIndex = 8;
             this.button2.Text = "Регистрация";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -322,6 +338,29 @@
             this.button3.TabIndex = 8;
             this.button3.Text = "Отмена";
             this.button3.UseVisualStyleBackColor = false;
+            // 
+            // database1DataSet
+            // 
+            this.database1DataSet.DataSetName = "Database1DataSet";
+            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // polBindingSource
+            // 
+            this.polBindingSource.DataMember = "Pol";
+            this.polBindingSource.DataSource = this.database1DataSet;
+            // 
+            // polTableAdapter
+            // 
+            this.polTableAdapter.ClearBeforeFill = true;
+            // 
+            // bloodTypeBindingSource
+            // 
+            this.bloodTypeBindingSource.DataMember = "BloodType";
+            this.bloodTypeBindingSource.DataSource = this.database1DataSet;
+            // 
+            // bloodTypeTableAdapter
+            // 
+            this.bloodTypeTableAdapter.ClearBeforeFill = true;
             // 
             // Form4
             // 
@@ -357,6 +396,9 @@
             this.Load += new System.EventHandler(this.Form4_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.polBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bloodTypeBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -390,5 +432,10 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button1;
+        private Database1DataSet database1DataSet;
+        private System.Windows.Forms.BindingSource polBindingSource;
+        private Database1DataSetTableAdapters.PolTableAdapter polTableAdapter;
+        private System.Windows.Forms.BindingSource bloodTypeBindingSource;
+        private Database1DataSetTableAdapters.BloodTypeTableAdapter bloodTypeTableAdapter;
     }
 }

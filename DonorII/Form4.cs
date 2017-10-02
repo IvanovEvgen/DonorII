@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace DonorII
 {
@@ -29,6 +30,10 @@ namespace DonorII
 
         private void Form4_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "database1DataSet.BloodType". При необходимости она может быть перемещена или удалена.
+            this.bloodTypeTableAdapter.Fill(this.database1DataSet.BloodType);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "database1DataSet.Pol". При необходимости она может быть перемещена или удалена.
+            this.polTableAdapter.Fill(this.database1DataSet.Pol);
             textBox1.Text = "Email";
             textBox1.ForeColor = Color.Gray;
             textBox1.Font = new Font(textBox1.Font, FontStyle.Italic);
@@ -85,6 +90,17 @@ namespace DonorII
             textBox5.Text = null;
             textBox5.ForeColor = Color.Black;
             textBox5.Font = new Font(textBox2.Font, FontStyle.Regular);
+        }
+
+        private void button2_Click(object sender, EventArgs e)//Регистрация
+        {
+            SqlCommand command = new SqlCommand();
+            command.Connection = ConnectionBD.ConnBD();
+            command.Connection.Open();
+            string load = @"INSERT INTO User(Email, Password, FirstName, LastName, RoleID, PolID, DateOfBirth, Health, BloodTypeID) VALUES('" + textBox1.Text + "', '" + textBox2.Text + "', '" + textBox4.Text + "', '" + textBox5.Text + "', '"+2+"', '"+ comboBox1.SelectedValue +"', '"+dateTimePicker1.Value+"', '"+comboBox2.SelectedText+"', '"+comboBox3.SelectedValue+"')";
+            command.CommandText = load;
+            command.ExecuteNonQuery();
+            command.Connection.Close();
         }
     }
 }
