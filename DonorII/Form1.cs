@@ -21,12 +21,14 @@ namespace DonorII
         {
             var f = new Form2();
             f.ShowDialog();
+            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             var f = new Form6();
             f.ShowDialog();
+            this.Close();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -38,12 +40,14 @@ namespace DonorII
         {
             var f = new Form118();
             f.ShowDialog();
+            this.Close();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             var f = new Form3();
             f.ShowDialog();
+            this.Close();
         }
     }
 }

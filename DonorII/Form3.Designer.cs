@@ -64,6 +64,7 @@
             this.button3.TabIndex = 10;
             this.button3.Text = "Назад";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label1
             // 
@@ -114,7 +115,7 @@
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.Location = new System.Drawing.Point(74, 219);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 21);
+            this.label5.Size = new System.Drawing.Size(79, 21);
             this.label5.TabIndex = 10;
             this.label5.Text = "Password:";
             // 
@@ -169,6 +170,7 @@
             this.button1.TabIndex = 15;
             this.button1.Text = "Cancel";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form3
             // 

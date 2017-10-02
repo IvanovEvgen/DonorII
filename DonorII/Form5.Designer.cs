@@ -36,10 +36,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -121,6 +121,18 @@
             this.panel1.Size = new System.Drawing.Size(600, 60);
             this.panel1.TabIndex = 9;
             // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button4.Location = new System.Drawing.Point(506, 12);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(78, 28);
+            this.button4.TabIndex = 34;
+            this.button4.Text = "Logout";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ScrollBar;
@@ -132,6 +144,7 @@
             this.button1.TabIndex = 33;
             this.button1.Text = "Назад";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button3
             // 
@@ -144,6 +157,7 @@
             this.button3.TabIndex = 31;
             this.button3.Text = "Отмена";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -156,18 +170,7 @@
             this.button2.TabIndex = 32;
             this.button2.Text = "Сохранить";
             this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button4.Location = new System.Drawing.Point(506, 12);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(78, 28);
-            this.button4.TabIndex = 34;
-            this.button4.Text = "Logout";
-            this.button4.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form5
             // 
