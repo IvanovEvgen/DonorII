@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace DonorII
 {
@@ -54,6 +55,19 @@ namespace DonorII
             var f = new Form1();
             f.ShowDialog();
             this.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SqlCommand command = new SqlCommand();
+            command.Connection = ConnectionBD.ConnBD();
+            command.Connection.Open();
+            //string load = @"SELECT Otdel.Name FROM Otdel WHERE Otdel.ID='" + Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value) + "'";
+            //command.CommandText = load;
+            var rid = command.ExecuteReader();
+            rid.Read();
+            textBox1.Text = rid["Name"].ToString();
+            command.Connection.Close();
         }
     }
 }

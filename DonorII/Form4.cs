@@ -105,7 +105,7 @@ namespace DonorII
             SqlCommand command = new SqlCommand();
             command.Connection = ConnectionBD.ConnBD();
             command.Connection.Open();
-            string load = @"INSERT INTO Users(Email, Pass, FirstName, LastName, RoleID, PolID, DateOfBirth, Health, BloodTypeID) VALUES('" + textBox1.Text + "', '" + textBox2.Text + "', '" + textBox4.Text + "', '" + textBox5.Text + "', '2', '"+ comboBox1.SelectedValue +"', '"+Convert.ToDateTime(dateTimePicker1.Value)+"', '"+comboBox2.SelectedText+"', '"+comboBox3.SelectedValue+"')";
+            string load = @"INSERT INTO Users(Email, Password, FirstName, LastName, RoleID, PolID, DateOfBirth, Health, BloodTypeID) VALUES(N'" + textBox1.Text + "', N'" + textBox2.Text + "', N'" + textBox4.Text + "', N'" + textBox5.Text + "', '2', N'"+ comboBox1.SelectedValue +"', '"+Convert.ToDateTime(dateTimePicker1.Value)+"', N'"+comboBox2.SelectedItem+"', N'"+comboBox3.SelectedValue+"')";
             command.CommandText = load;
             command.ExecuteNonQuery();
             command.Connection.Close();
