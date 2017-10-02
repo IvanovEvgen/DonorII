@@ -59,18 +59,34 @@ namespace DonorII
 
         private void button4_Click(object sender, EventArgs e)
         {
-            SqlCommand command = new SqlCommand();
-            command.Connection = ConnectionBD.ConnBD();
-            command.Connection.Open();
-            string load = @"SELECT Password FROM Users WHERE Email='" + textBox1.Text + "'";
-            command.CommandText = load;
-            var rid = command.ExecuteReader();
-            rid.Read();
-            string pas = rid["Password"].ToString();
-            command.Connection.Close();
+            try
+            {
+                SqlCommand command = new SqlCommand();
+                command.Connection = ConnectionBD.ConnBD();
+                command.Connection.Open();
+                string load = @"SELECT Password, RoleID FROM Users WHERE Email='" + textBox1.Text + "'";
+                command.CommandText = load;
+                var rid = command.ExecuteReader();
+                rid.Read();
+                string pas = rid["Password"].ToString();
+                string role = rid["RoleID"].ToString();
+                command.Connection.Close();
 
-            if (textBox2.Text == pas) { MessageBox.Show("Добро пожаловать!"); }
-            else { MessageBox.Show("Ошибка!"); }
+                if (textBox2.Text == pas)
+                {
+                    if (role == "1")
+                    {
+                        Form111 obj = new Form111();
+                        obj.Show();
+                    }
+                    else
+                    {
+                        Form07 obj = new Form07();
+                        obj.Show();
+                    }
+                }
+            }
+            catch { MessageBox.Show("Ошибка!"); }
         }
     }
 }
