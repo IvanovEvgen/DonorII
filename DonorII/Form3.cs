@@ -62,12 +62,15 @@ namespace DonorII
             SqlCommand command = new SqlCommand();
             command.Connection = ConnectionBD.ConnBD();
             command.Connection.Open();
-            //string load = @"SELECT Otdel.Name FROM Otdel WHERE Otdel.ID='" + Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value) + "'";
-            //command.CommandText = load;
+            string load = @"SELECT Password FROM Users WHERE Email='" + textBox1.Text + "'";
+            command.CommandText = load;
             var rid = command.ExecuteReader();
             rid.Read();
-            textBox1.Text = rid["Name"].ToString();
+            string pas = rid["Password"].ToString();
             command.Connection.Close();
+
+            if (textBox2.Text == pas) { MessageBox.Show("Добро пожаловать!"); }
+            else { MessageBox.Show("Ошибка!"); }
         }
     }
 }
