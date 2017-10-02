@@ -21,12 +21,28 @@ namespace DonorII
         {
             var f = new Form3();
             f.ShowDialog();
+            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             var f = new Form4();
             f.ShowDialog();
+            this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var f = new Form1();
+            f.ShowDialog();
+            this.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            var f = new Form3();
+            f.ShowDialog();
+            this.Close();
         }
     }
 }

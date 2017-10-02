@@ -92,6 +92,20 @@ namespace DonorII
             textBox5.Font = new Font(textBox2.Font, FontStyle.Regular);
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var f = new Form1();
+            f.ShowDialog();
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var f = new Form5();
+            f.ShowDialog();
+            this.Close();
+        }
+
         private void button2_Click(object sender, EventArgs e)//Регистрация
         {
             SqlCommand command = new SqlCommand();

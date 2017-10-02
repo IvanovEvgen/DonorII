@@ -88,6 +88,7 @@
             this.button1.TabIndex = 11;
             this.button1.Text = "Назад";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -115,7 +116,7 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label2.Location = new System.Drawing.Point(194, 61);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(224, 30);
+            this.label2.Size = new System.Drawing.Size(223, 30);
             this.label2.TabIndex = 2;
             this.label2.Text = "Регистрация донора";
             // 

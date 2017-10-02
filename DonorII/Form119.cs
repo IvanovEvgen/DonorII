@@ -16,5 +16,19 @@ namespace DonorII
         {
             InitializeComponent();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            var f = new Form1();
+            f.ShowDialog();
+            this.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            var f = new Form1();
+            f.ShowDialog();
+            this.Close();
+        }
     }
 }

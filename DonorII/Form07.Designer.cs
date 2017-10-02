@@ -69,6 +69,7 @@
             this.button1.TabIndex = 54;
             this.button1.Text = "Logout";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -81,6 +82,7 @@
             this.button2.TabIndex = 53;
             this.button2.Text = "Назад";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label2
             // 
@@ -122,6 +124,7 @@
             this.button4.TabIndex = 62;
             this.button4.Text = "Я хочу сдать кровь";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -134,6 +137,7 @@
             this.button3.TabIndex = 63;
             this.button3.Text = "Редактирование профиля";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button5
             // 
@@ -159,13 +163,14 @@
             this.button6.TabIndex = 65;
             this.button6.Text = "Мои результаты";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(102, 82);
+            this.panel3.Location = new System.Drawing.Point(87, 107);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(386, 203);
             this.panel3.TabIndex = 66;
