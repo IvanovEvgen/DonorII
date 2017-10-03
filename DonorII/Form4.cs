@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace DonorII
 {
@@ -101,6 +102,46 @@ namespace DonorII
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (Regex.IsMatch(textBox1.Text, @"\A[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\z") == false)
+            {
+                MessageBox.Show("Не правильно введен адрес почты. Повторите попытку.");
+                return;
+            }
+           else if (Regex.IsMatch(textBox2.Text, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{6,}") == false)
+            {
+                MessageBox.Show("Пароль должен содержать: /nМинимум 6 символов, /nМинимум 1 прописная буква, /nМинимум 1 цифра, /nПо крайней мере один из следующих символов: ! @ # $ % ^");
+                return;
+            }
+            else if(textBox2.Text != textBox3.Text)
+            {
+                MessageBox.Show("Пароли не совпадают!");
+            }
+            else
+            {
+                try
+                {
+                    SqlCommand command = new SqlCommand();
+                    command.Connection = ConnectionBD.ConnBD();
+                    command.Connection.Open();
+                    string load = @"INSERT INTO Users(Email, Password, FirstName, LastName, RoleID, PolID, DateOfBirth, Health, BloodTypeID) VALUES(N'" + textBox1.Text + "', N'" + textBox2.Text + "', N'" + textBox4.Text + "', N'" + textBox5.Text + "', '2', N'" + comboBox1.SelectedValue + "', '" + Convert.ToDateTime(dateTimePicker1.Value) + "', N'" + comboBox2.SelectedItem + "', N'" + comboBox3.SelectedValue + "')";
+                    command.CommandText = load;
+                    command.ExecuteNonQuery();
+                    command.Connection.Close();
+                    var f = new Form5();
+                    f.ShowDialog();
+                    this.Close();
+                }
+                catch
+                {
+                    MessageBox.Show("Заполните все поля!");
+                }
+            }
+        }
+       
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
             //Почта проверка
             SqlCommand command = new SqlCommand();
             command.Connection = ConnectionBD.ConnBD();

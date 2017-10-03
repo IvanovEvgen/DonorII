@@ -152,9 +152,8 @@
             this.label13.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label13.Location = new System.Drawing.Point(117, 116);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(167, 20);
+            this.label13.Size = new System.Drawing.Size(0, 20);
             this.label13.TabIndex = 91;
-            this.label13.Text = "the.email@address.com";
             this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // dateTimePicker1
@@ -328,6 +327,7 @@
             this.button2.TabIndex = 99;
             this.button2.Text = "Сохранить";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form114
             // 
