@@ -101,7 +101,7 @@ namespace DonorII
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            //Почта проверка
             SqlCommand command = new SqlCommand();
             command.Connection = ConnectionBD.ConnBD();
             command.Connection.Open();
@@ -110,7 +110,7 @@ namespace DonorII
             command.ExecuteNonQuery();
             command.Connection.Close();
 
-            var f = new Form5();
+            var f = new Form5(textBox1.Text);
             f.ShowDialog();
             this.Close();
         }

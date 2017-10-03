@@ -12,6 +12,7 @@ namespace DonorII
 {
     public partial class Form07 : Form
     {
+        string IDUsers;
         public Form07()
         {
             InitializeComponent();
@@ -43,7 +44,7 @@ namespace DonorII
 
         private void button4_Click(object sender, EventArgs e)
         {
-            var f = new Form5();
+            var f = new Form5(IDUsers);
             f.ShowDialog();
             this.Close();
         }
