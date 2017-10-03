@@ -127,7 +127,7 @@ namespace DonorII
                     command.CommandText = load;
                     command.ExecuteNonQuery();
                     command.Connection.Close();
-                    var f = new Form5();
+                    var f = new Form5(textBox1.Text);
                     f.ShowDialog();
                     this.Close();
                 }
@@ -142,18 +142,7 @@ namespace DonorII
         {
             
         }
-            //Почта проверка
-            SqlCommand command = new SqlCommand();
-            command.Connection = ConnectionBD.ConnBD();
-            command.Connection.Open();
-            string load = @"INSERT INTO Users(Email, Password, FirstName, LastName, RoleID, PolID, DateOfBirth, Health, BloodTypeID) VALUES(N'" + textBox1.Text + "', N'" + textBox2.Text + "', N'" + textBox4.Text + "', N'" + textBox5.Text + "', '2', N'"+ comboBox1.SelectedValue +"', '"+Convert.ToDateTime(dateTimePicker1.Value)+"', N'"+comboBox2.SelectedItem+"', N'"+comboBox3.SelectedValue+"')";
-            command.CommandText = load;
-            command.ExecuteNonQuery();
-            command.Connection.Close();
 
-            var f = new Form5(textBox1.Text);
-            f.ShowDialog();
-            this.Close();
-        }
+
     }
 }
