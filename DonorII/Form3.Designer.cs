@@ -147,6 +147,7 @@
             this.textBox2.Size = new System.Drawing.Size(268, 31);
             this.textBox2.TabIndex = 12;
             this.textBox2.Enter += new System.EventHandler(this.textBox2_Enter);
+            this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
             // 
             // panel2
             // 
@@ -189,7 +190,7 @@
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.label7);
-            this.panel3.Location = new System.Drawing.Point(107, 99);
+            this.panel3.Location = new System.Drawing.Point(88, 99);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(386, 203);
             this.panel3.TabIndex = 67;

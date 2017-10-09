@@ -24,8 +24,8 @@ namespace DonorII
 
         private void button3_Click(object sender, EventArgs e)
         {
-            var f = new Form07();
-            f.ShowDialog();
+            //var f = new Form07();
+            //f.ShowDialog();
             this.Close();
         }
 
@@ -38,8 +38,8 @@ namespace DonorII
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var f = new Form07();
-            f.ShowDialog();
+            //var f = new Form07();
+            //f.ShowDialog();
             this.Close();
         }
     }

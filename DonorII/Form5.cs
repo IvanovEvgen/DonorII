@@ -22,19 +22,12 @@ namespace DonorII
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var f = new Form07();
+            var f = new Form07(IDUsers);
             f.ShowDialog();
             this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {
-            var f = new Form6();
-            f.ShowDialog();
-            this.Close();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
         {
             //Проверка дат
             try
@@ -50,6 +43,15 @@ namespace DonorII
                 this.Close();
             }
             catch { MessageBox.Show("Ошибка!"); }
+
+            var f = new Form6();
+            f.ShowDialog();
+            this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -56,7 +57,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.database1DataSet = new DonorII.Database1DataSet();
+            this.polBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.polTableAdapter = new DonorII.Database1DataSetTableAdapters.PolTableAdapter();
+            this.bloodTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bloodTypeTableAdapter = new DonorII.Database1DataSetTableAdapters.BloodTypeTableAdapter();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.polBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bloodTypeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label14
@@ -126,13 +135,15 @@
             // 
             // comboBox3
             // 
+            this.comboBox3.DataSource = this.bloodTypeBindingSource;
+            this.comboBox3.DisplayMember = "BloodType";
             this.comboBox3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(123, 304);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(163, 28);
             this.comboBox3.TabIndex = 53;
-            this.comboBox3.Text = "III";
+            this.comboBox3.ValueMember = "BloodType";
             // 
             // comboBox2
             // 
@@ -146,13 +157,15 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DataSource = this.polBindingSource;
+            this.comboBox1.DisplayMember = "Gender";
             this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(123, 203);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(163, 28);
             this.comboBox1.TabIndex = 51;
-            this.comboBox1.Text = "Мужской";
+            this.comboBox1.ValueMember = "Gender";
             // 
             // textBox3
             // 
@@ -258,7 +271,7 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label2.Location = new System.Drawing.Point(158, 63);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(280, 30);
+            this.label2.Size = new System.Drawing.Size(281, 30);
             this.label2.TabIndex = 36;
             this.label2.Text = "Редактирование профиля";
             // 
@@ -344,6 +357,29 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // database1DataSet
+            // 
+            this.database1DataSet.DataSetName = "Database1DataSet";
+            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // polBindingSource
+            // 
+            this.polBindingSource.DataMember = "Pol";
+            this.polBindingSource.DataSource = this.database1DataSet;
+            // 
+            // polTableAdapter
+            // 
+            this.polTableAdapter.ClearBeforeFill = true;
+            // 
+            // bloodTypeBindingSource
+            // 
+            this.bloodTypeBindingSource.DataMember = "BloodType";
+            this.bloodTypeBindingSource.DataSource = this.database1DataSet;
+            // 
+            // bloodTypeTableAdapter
+            // 
+            this.bloodTypeTableAdapter.ClearBeforeFill = true;
+            // 
             // Form09
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -376,8 +412,12 @@
             this.Controls.Add(this.panel1);
             this.Name = "Form09";
             this.Text = "Редактирование профиля";
+            this.Load += new System.EventHandler(this.Form09_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.polBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bloodTypeBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -413,5 +453,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
+        private Database1DataSet database1DataSet;
+        private System.Windows.Forms.BindingSource polBindingSource;
+        private Database1DataSetTableAdapters.PolTableAdapter polTableAdapter;
+        private System.Windows.Forms.BindingSource bloodTypeBindingSource;
+        private Database1DataSetTableAdapters.BloodTypeTableAdapter bloodTypeTableAdapter;
     }
 }
