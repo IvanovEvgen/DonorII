@@ -22,8 +22,6 @@ namespace DonorII
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var f = new Form07(IDUsers);
-            f.ShowDialog();
             this.Close();
         }
 
@@ -35,7 +33,7 @@ namespace DonorII
                 SqlCommand command = new SqlCommand();
                 command.Connection = ConnectionBD.ConnBD();
                 command.Connection.Open();
-                string load = @"INSERT INTO GivingBlood(IDUsers, StartDataTime, Cost) VALUES(N'" + IDUsers + "', N'" + dateTimePicker1.Value + "', N'" + textBox1.Text + "')";
+                string load = @"INSERT INTO GivingBlood(IDUsers, StartDataTime, Cost) VALUES('" + IDUsers + "', '" + dateTimePicker1.Value + "', '" +Math.Round(Convert.ToDouble(textBox1.Text),2) + "')";
                 command.CommandText = load;
                 command.ExecuteNonQuery();
                 command.Connection.Close();
