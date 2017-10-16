@@ -63,7 +63,7 @@ namespace DonorII
             {
 
             }
-            var f = new Form07();
+            var f = new Form07(IDuser);
             f.ShowDialog();
             this.Close();
         }

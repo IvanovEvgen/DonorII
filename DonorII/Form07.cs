@@ -49,7 +49,7 @@ namespace DonorII
 
         private void button6_Click(object sender, EventArgs e)
         {
-            var f = new Form110();
+            var f = new Form110(IDUsers);
             f.ShowDialog();
         }
 
