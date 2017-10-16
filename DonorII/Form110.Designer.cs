@@ -50,6 +50,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -58,6 +60,8 @@
             this.Column4});
             this.dataGridView1.Location = new System.Drawing.Point(82, 182);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(442, 150);
             this.dataGridView1.TabIndex = 27;
             // 
@@ -65,21 +69,25 @@
             // 
             this.Column1.HeaderText = "Дата";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Количество крови в мл";
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "Группа крови ";
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "Здоровье";
             this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // label7
             // 
@@ -214,6 +222,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Form110";
             this.Text = "Мои результаты участия в сдаче крови";
+            this.Load += new System.EventHandler(this.Form110_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
