@@ -19,16 +19,36 @@ namespace DonorII
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var f = new Form2();
-            f.ShowDialog();
-            this.Close();
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "Form2")
+                {
+                    //  MessageBox.Show("Уже открыта");
+                    f.Activate();
+                    return;
+                }
+            }
+            Form2 f1 = new Form2();
+            f1.Show();
+
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var f = new Form6();
-            f.ShowDialog();
-            this.Close();
+
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "Form6")
+                {
+                    //  MessageBox.Show("Уже открыта");
+                    f.Activate();
+                    return;
+                }
+            }
+            Form6 f1 = new Form6();
+            f1.Show();
+           
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -38,16 +58,39 @@ namespace DonorII
 
         private void button3_Click(object sender, EventArgs e)
         {
-            var f = new Form118();
-            f.ShowDialog();
-            this.Close();
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "Form118")
+                {
+                    //  MessageBox.Show("Уже открыта");
+                    f.Activate();
+                    return;
+                }
+            }
+            Form118 f1 = new Form118();
+            f1.Show();
+           
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            var f = new Form3();
-            f.ShowDialog();
-            this.Close();
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "Form3")
+                {
+                    //  MessageBox.Show("Уже открыта");
+                    f.Activate();
+                    return;
+                }
+            }
+            Form3 f1 = new Form3();
+            f1.Show(); 
+         
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
