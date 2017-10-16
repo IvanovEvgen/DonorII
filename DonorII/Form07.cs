@@ -13,9 +13,10 @@ namespace DonorII
     public partial class Form07 : Form
     {
         string IDUsers;
-        public Form07()
+        public Form07(string IDUsers)
         {
             InitializeComponent();
+            this.IDUsers = IDUsers;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -32,35 +33,30 @@ namespace DonorII
         {
             var f = new Form1();
             f.ShowDialog();
-            this.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            var f = new Form09();
+            var f = new Form09(IDUsers);
             f.ShowDialog();
-            this.Close();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             var f = new Form5(IDUsers);
             f.ShowDialog();
-            this.Close();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            var f = new Form110();
+            var f = new Form110(IDUsers);
             f.ShowDialog();
-            this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             var f = new Form1();
             f.ShowDialog();
-            this.Close();
         }
     }
 }

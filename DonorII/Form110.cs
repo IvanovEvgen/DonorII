@@ -12,9 +12,11 @@ namespace DonorII
 {
     public partial class Form110 : Form
     {
-        public Form110()
+        string IDuser;
+        public Form110(string IDuser)
         {
             InitializeComponent();
+            this.IDuser = IDuser;
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -76,17 +76,22 @@ namespace DonorII
                 {
                     if (role == "1")
                     {
-                        Form111 obj = new Form111();
+                        Form111 obj = new Form111(textBox1.Text);
                         obj.Show();
                     }
                     else
                     {
-                        Form07 obj = new Form07();
+                        Form07 obj = new Form07(textBox1.Text);
                         obj.Show();
                     }
                 }
             }
             catch { MessageBox.Show("Ошибка!"); }
+        }
+
+        private void textBox2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter) { button4_Click(sender, e); }
         }
     }
 }

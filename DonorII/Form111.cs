@@ -12,9 +12,11 @@ namespace DonorII
 {
     public partial class Form111 : Form
     {
-        public Form111()
+        string IDAdmin;
+        public Form111(string IDAdmin)
         {
             InitializeComponent();
+            this.IDAdmin = IDAdmin;
         }
 
         private void button1_Click(object sender, EventArgs e)
