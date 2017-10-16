@@ -116,6 +116,10 @@ namespace DonorII
             {
                 MessageBox.Show("Пароли не совпадают!");
             }
+            else if (dateTimePicker1.Value.Year >= DateTime.Now.Year-18)
+            {
+                MessageBox.Show("Вам нет 18 лет, вы не можете быть зарегистрированы!");
+            }
             else
             {
                 try
