@@ -33,18 +33,17 @@ namespace DonorII
                 SqlCommand command = new SqlCommand();
                 command.Connection = ConnectionBD.ConnBD();
                 command.Connection.Open();
-                string load = @"INSERT INTO GivingBlood(IDUsers, StartDataTime, Cost) VALUES('" + IDUsers + "', '" + dateTimePicker1.Value + "', '" +Math.Round(Convert.ToDouble(textBox1.Text),2) + "')";
+                string load = @"INSERT INTO GivingBlood(IDUsers, StartDataTime, Cost) VALUES('" + IDUsers + "', '" + Convert.ToDateTime(dateTimePicker1.Value) + "', '" + Convert.ToDecimal(textBox1.Text) + "')";
                 command.CommandText = load;
                 command.ExecuteNonQuery();
                 command.Connection.Close();
-                MessageBox.Show("Вы успешно записаны!");
+
+                var f = new Form6();
+                f.ShowDialog();
                 this.Close();
             }
             catch { MessageBox.Show("Ошибка!"); }
 
-            var f = new Form6();
-            f.ShowDialog();
-            this.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
