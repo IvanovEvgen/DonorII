@@ -59,6 +59,7 @@ namespace DonorII
 
         private void button4_Click(object sender, EventArgs e)
         {
+            /* 
             try
              {
                  SqlCommand command = new SqlCommand();
@@ -87,7 +88,7 @@ namespace DonorII
                  }
              }
              catch { MessageBox.Show("Ошибка!"); }
-
+             */
             foreach (Form f in Application.OpenForms)
             {
                 if (f.Name == "Form07")

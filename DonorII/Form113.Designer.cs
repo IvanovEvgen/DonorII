@@ -322,6 +322,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Form113";
             this.Text = "Form113";
+            this.Load += new System.EventHandler(this.Form113_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

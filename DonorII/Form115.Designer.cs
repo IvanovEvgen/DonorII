@@ -224,6 +224,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "Form115";
             this.Text = "Показ сертификата";
+            this.Load += new System.EventHandler(this.Form115_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);

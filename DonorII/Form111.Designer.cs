@@ -156,6 +156,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Form111";
             this.Text = "Меню администратора";
+            this.Load += new System.EventHandler(this.Form111_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
