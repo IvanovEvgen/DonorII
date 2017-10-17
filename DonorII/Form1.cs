@@ -36,19 +36,18 @@ namespace DonorII
 
         private void button2_Click(object sender, EventArgs e)
         {
-
             foreach (Form f in Application.OpenForms)
             {
-                if (f.Name == "Form6")
+                if (f.Name == "Form3")
                 {
                     //  MessageBox.Show("Уже открыта");
                     f.Activate();
                     return;
                 }
             }
-            Form6 f1 = new Form6();
+            Form3 f1 = new Form3();
             f1.Show();
-           
+
         }
 
         private void label1_Click(object sender, EventArgs e)

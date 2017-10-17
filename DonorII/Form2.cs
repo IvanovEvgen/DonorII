@@ -40,8 +40,18 @@ namespace DonorII
 
         private void button4_Click(object sender, EventArgs e)
         {
-            var f = new Form3();
-            f.ShowDialog();
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "Form3")
+                {
+                    //  MessageBox.Show("Уже открыта");
+                    f.Activate();
+                    this.Close();
+                    return;
+                }
+            }
+            Form3 f1 = new Form3();
+            f1.Show();
             this.Close();
         }
     }

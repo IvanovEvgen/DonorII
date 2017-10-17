@@ -98,6 +98,7 @@
             this.button4.TabIndex = 44;
             this.button4.Text = "Logout";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button1
             // 
@@ -251,7 +252,7 @@
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.Location = new System.Drawing.Point(281, 301);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(115, 21);
+            this.label7.Size = new System.Drawing.Size(114, 21);
             this.label7.TabIndex = 102;
             this.label7.Text = "Total runners:";
             // 

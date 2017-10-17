@@ -123,7 +123,7 @@
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.Location = new System.Drawing.Point(74, 219);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 21);
+            this.label5.Size = new System.Drawing.Size(79, 21);
             this.label5.TabIndex = 10;
             this.label5.Text = "Password:";
             // 
@@ -246,7 +246,7 @@
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.Location = new System.Drawing.Point(67, 28);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(250, 21);
+            this.label7.Size = new System.Drawing.Size(248, 21);
             this.label7.TabIndex = 0;
             this.label7.Text = "ТОЛЬКО ДЛЯ ТЕСТИРОВАНИЯ!";
             // 
@@ -255,7 +255,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(591, 392);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.panel2);
@@ -266,6 +265,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel3);
             this.Name = "Form3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Меню авторизации";

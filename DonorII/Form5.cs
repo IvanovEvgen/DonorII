@@ -28,12 +28,12 @@ namespace DonorII
         private void button2_Click(object sender, EventArgs e)
         {
             //Проверка дат
-            try
-            {
+            //try
+            //{
                 SqlCommand command = new SqlCommand();
                 command.Connection = ConnectionBD.ConnBD();
                 command.Connection.Open();
-                string load = @"INSERT INTO GivingBlood(IDUsers, StartDataTime, Cost) VALUES('" + IDUsers + "', '" + Convert.ToDateTime(dateTimePicker1.Value) + "', '" + Convert.ToDecimal(textBox1.Text) + "')";
+                string load = @"INSERT INTO GivingBlood(IDUsers, StartDataTime, Cost) VALUES('" + IDUsers + "', '" + Convert.ToDateTime(dateTimePicker1.Text) + "', '" +Convert.ToDouble(textBox1.Text) + "')";
                 command.CommandText = load;
                 command.ExecuteNonQuery();
                 command.Connection.Close();
@@ -41,13 +41,30 @@ namespace DonorII
                 var f = new Form6();
                 f.ShowDialog();
                 this.Close();
-            }
-            catch { MessageBox.Show("Ошибка!"); }
+            //}
+            //catch { MessageBox.Show("Ошибка!"); }
 
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "Form1")
+                {
+                    //  MessageBox.Show("Уже открыта");
+                    f.Activate();
+                    this.Close();
+                    return;
+                }
+            }
+            Form1 f1 = new Form1();
+            f1.Show();
             this.Close();
         }
     }
