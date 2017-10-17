@@ -22,7 +22,11 @@ namespace DonorII
             load_table();
             pol();
         }
-
+        public Form110()
+        {
+            InitializeComponent();
+           
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             var f = new Form1();
@@ -52,7 +56,7 @@ namespace DonorII
            
         }
         public void load_table()
-        {
+        { 
             SqlCommand command = new SqlCommand();
             command.Connection = ConnectionBD.ConnBD();
             command.Connection.Open();
@@ -73,6 +77,7 @@ namespace DonorII
             dataGridView1.Columns[2].HeaderText = "Группа крови";
             dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dataGridView1.Columns[3].HeaderText = "Здоровье";
+            
         }
 
         public void pol()

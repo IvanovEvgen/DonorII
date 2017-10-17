@@ -44,7 +44,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.polBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.database1DataSet = new DonorII.Database1DataSet();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.bloodTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -56,16 +59,13 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
-            this.database1DataSet = new DonorII.Database1DataSet();
-            this.polBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.polTableAdapter = new DonorII.Database1DataSetTableAdapters.PolTableAdapter();
-            this.bloodTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bloodTypeTableAdapter = new DonorII.Database1DataSetTableAdapters.BloodTypeTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.polBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bloodTypeBindingSource)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -209,6 +209,16 @@
             this.comboBox3.TabIndex = 50;
             this.comboBox3.ValueMember = "Gender";
             // 
+            // polBindingSource
+            // 
+            this.polBindingSource.DataMember = "Pol";
+            this.polBindingSource.DataSource = this.database1DataSet;
+            // 
+            // database1DataSet
+            // 
+            this.database1DataSet.DataSetName = "Database1DataSet";
+            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // comboBox2
             // 
             this.comboBox2.DataSource = this.bloodTypeBindingSource;
@@ -220,6 +230,11 @@
             this.comboBox2.Size = new System.Drawing.Size(203, 28);
             this.comboBox2.TabIndex = 48;
             this.comboBox2.ValueMember = "BloodType";
+            // 
+            // bloodTypeBindingSource
+            // 
+            this.bloodTypeBindingSource.DataMember = "BloodType";
+            this.bloodTypeBindingSource.DataSource = this.database1DataSet;
             // 
             // comboBox1
             // 
@@ -282,6 +297,7 @@
             this.label2.TabIndex = 42;
             this.label2.Text = "Результаты предыдущих людей по сдачи крови ";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // panel2
             // 
@@ -337,24 +353,9 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // database1DataSet
-            // 
-            this.database1DataSet.DataSetName = "Database1DataSet";
-            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // polBindingSource
-            // 
-            this.polBindingSource.DataMember = "Pol";
-            this.polBindingSource.DataSource = this.database1DataSet;
-            // 
             // polTableAdapter
             // 
             this.polTableAdapter.ClearBeforeFill = true;
-            // 
-            // bloodTypeBindingSource
-            // 
-            this.bloodTypeBindingSource.DataMember = "BloodType";
-            this.bloodTypeBindingSource.DataSource = this.database1DataSet;
             // 
             // bloodTypeTableAdapter
             // 
@@ -388,11 +389,11 @@
             this.Text = "Результаты прошедших сдач крови ";
             this.Load += new System.EventHandler(this.Form08_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.polBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bloodTypeBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.polBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bloodTypeBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

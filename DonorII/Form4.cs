@@ -95,8 +95,19 @@ namespace DonorII
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var f = new Form1();
-            f.ShowDialog();
+
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "Form2")
+                {
+                    //  MessageBox.Show("Уже открыта");
+                    f.Activate();
+                    this.Close();
+                    return;
+                }
+            }
+            Form2 f1 = new Form2();
+            f1.Show();
             this.Close();
         }
 
@@ -107,16 +118,16 @@ namespace DonorII
                 MessageBox.Show("Не правильно введен адрес почты. Повторите попытку.");
                 return;
             }
-           else if (Regex.IsMatch(textBox2.Text, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{6,}") == false)
+            else if (Regex.IsMatch(textBox2.Text, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{6,}") == false)
             {
                 MessageBox.Show("Пароль должен содержать: /nМинимум 6 символов, /nМинимум 1 прописная буква, /nМинимум 1 цифра, /nПо крайней мере один из следующих символов: ! @ # $ % ^");
                 return;
             }
-            else if(textBox2.Text != textBox3.Text)
+            else if (textBox2.Text != textBox3.Text)
             {
                 MessageBox.Show("Пароли не совпадают!");
             }
-            else if (dateTimePicker1.Value.Year >= DateTime.Now.Year-18)
+            else if (dateTimePicker1.Value.Year >= DateTime.Now.Year - 18)
             {
                 MessageBox.Show("Вам нет 18 лет, вы не можете быть зарегистрированы!");
             }
@@ -132,7 +143,7 @@ namespace DonorII
                     command.ExecuteNonQuery();
                     command.Connection.Close();
                     var f = new Form5(textBox1.Text);
-                    f.ShowDialog();
+                    f.Show();
                     this.Close();
                 }
                 catch
@@ -141,12 +152,28 @@ namespace DonorII
                 }
             }
         }
-       
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
 
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "Form1")
+                {
+                    //  MessageBox.Show("Уже открыта");
+                    f.Activate();
+                    this.Close();
+                    return;
+                }
+            }
+            Form1 f1 = new Form1();
+            f1.Show();
+            this.Close();
+        }
     }
 }

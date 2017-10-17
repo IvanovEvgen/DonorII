@@ -18,6 +18,10 @@ namespace DonorII
             InitializeComponent();
             this.IDAdmin = IDAdmin;
         }
+        public Form111()
+        {
+            InitializeComponent();
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -41,6 +45,11 @@ namespace DonorII
             Form1 f1 = new Form1();
             f1.Show();
             this.Close();
+        }
+
+        private void Form111_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

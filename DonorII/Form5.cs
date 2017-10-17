@@ -19,6 +19,11 @@ namespace DonorII
             InitializeComponent();
             this.IDUsers = IDUsers;
         }
+        public Form5()
+        {
+            InitializeComponent();
+           
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -67,6 +72,11 @@ namespace DonorII
             Form1 f1 = new Form1();
             f1.Show();
             this.Close();
+        }
+
+        private void Form5_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

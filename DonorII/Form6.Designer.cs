@@ -155,6 +155,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Form6";
             this.Text = "Подтверждение регистрации Донора";
+            this.Load += new System.EventHandler(this.Form6_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

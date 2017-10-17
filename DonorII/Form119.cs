@@ -19,8 +19,19 @@ namespace DonorII
 
         private void button6_Click(object sender, EventArgs e)
         {
-            var f = new Form1();
-            f.ShowDialog();
+
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "Form118")
+                {
+                    //  MessageBox.Show("Уже открыта");
+                    f.Activate();
+                    this.Close();
+                    return;
+                }
+            }
+            Form118 f1 = new Form118();
+            f1.Show();
             this.Close();
         }
 

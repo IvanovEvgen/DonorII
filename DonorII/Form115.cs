@@ -33,5 +33,10 @@ namespace DonorII
             f1.Show();
             this.Close();
         }
+
+        private void Form115_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -324,6 +324,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Form112";
             this.Text = "Управление информацией о Донорах";
+            this.Load += new System.EventHandler(this.Form112_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

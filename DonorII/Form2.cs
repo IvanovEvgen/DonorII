@@ -19,22 +19,53 @@ namespace DonorII
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var f = new Form3();
-            f.ShowDialog();
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "Form3")
+                {
+                    //  MessageBox.Show("Уже открыта");
+                    f.Activate();
+                    this.Close();
+                    return;
+                }
+            }
+            Form3 f1 = new Form3();
+            f1.Show();
             this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var f = new Form4();
-            f.ShowDialog();
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "Form4")
+                {
+                    //  MessageBox.Show("Уже открыта");
+                    f.Activate();
+                    this.Close();
+                    return;
+                }
+            }
+            Form4 f1 = new Form4();
+            f1.Show();
             this.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            var f = new Form1();
-            f.ShowDialog();
+
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "Form1")
+                {
+                    //  MessageBox.Show("Уже открыта");
+                    f.Activate();
+                    this.Close();
+                    return;
+                }
+            }
+            Form1 f1 = new Form1();
+            f1.Show();
             this.Close();
         }
 
@@ -53,6 +84,11 @@ namespace DonorII
             Form3 f1 = new Form3();
             f1.Show();
             this.Close();
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
