@@ -32,9 +32,9 @@ namespace DonorII
         private void Form4_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "database1DataSet.BloodType". При необходимости она может быть перемещена или удалена.
-            this.bloodTypeTableAdapter.Fill(this.database1DataSet.BloodType);
+            // Cвета this.bloodTypeTableAdapter.Fill(this.database1DataSet.BloodType);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "database1DataSet.Pol". При необходимости она может быть перемещена или удалена.
-            this.polTableAdapter.Fill(this.database1DataSet.Pol);
+            //Света this.polTableAdapter.Fill(this.database1DataSet.Pol);
             textBox1.Text = "Email";
             textBox1.ForeColor = Color.Gray;
             textBox1.Font = new Font(textBox1.Font, FontStyle.Italic);
@@ -95,8 +95,19 @@ namespace DonorII
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var f = new Form1();
-            f.ShowDialog();
+
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "Form2")
+                {
+                    //  MessageBox.Show("Уже открыта");
+                    f.Activate();
+                    this.Close();
+                    return;
+                }
+            }
+            Form2 f1 = new Form2();
+            f1.Show();
             this.Close();
         }
 
@@ -132,7 +143,7 @@ namespace DonorII
                     command.ExecuteNonQuery();
                     command.Connection.Close();
                     var f = new Form5(textBox1.Text);
-                    f.ShowDialog();
+                    f.Show();
                     this.Close();
                 }
                 catch
@@ -147,6 +158,22 @@ namespace DonorII
             
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
 
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f.Name == "Form1")
+                {
+                    //  MessageBox.Show("Уже открыта");
+                    f.Activate();
+                    this.Close();
+                    return;
+                }
+            }
+            Form1 f1 = new Form1();
+            f1.Show();
+            this.Close();
+        }
     }
 }
