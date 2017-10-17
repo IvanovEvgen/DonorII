@@ -32,9 +32,9 @@ namespace DonorII
         private void Form4_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "database1DataSet.BloodType". При необходимости она может быть перемещена или удалена.
-            // Cвета this.bloodTypeTableAdapter.Fill(this.database1DataSet.BloodType);
+            this.bloodTypeTableAdapter.Fill(this.database1DataSet.BloodType);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "database1DataSet.Pol". При необходимости она может быть перемещена или удалена.
-            //Света this.polTableAdapter.Fill(this.database1DataSet.Pol);
+            this.polTableAdapter.Fill(this.database1DataSet.Pol);
             textBox1.Text = "Email";
             textBox1.ForeColor = Color.Gray;
             textBox1.Font = new Font(textBox1.Font, FontStyle.Italic);
@@ -118,16 +118,16 @@ namespace DonorII
                 MessageBox.Show("Не правильно введен адрес почты. Повторите попытку.");
                 return;
             }
-           else if (Regex.IsMatch(textBox2.Text, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{6,}") == false)
+            else if (Regex.IsMatch(textBox2.Text, @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{6,}") == false)
             {
                 MessageBox.Show("Пароль должен содержать: /nМинимум 6 символов, /nМинимум 1 прописная буква, /nМинимум 1 цифра, /nПо крайней мере один из следующих символов: ! @ # $ % ^");
                 return;
             }
-            else if(textBox2.Text != textBox3.Text)
+            else if (textBox2.Text != textBox3.Text)
             {
                 MessageBox.Show("Пароли не совпадают!");
             }
-            else if (dateTimePicker1.Value.Year >= DateTime.Now.Year-18)
+            else if (dateTimePicker1.Value.Year >= DateTime.Now.Year - 18)
             {
                 MessageBox.Show("Вам нет 18 лет, вы не можете быть зарегистрированы!");
             }
@@ -152,10 +152,10 @@ namespace DonorII
                 }
             }
         }
-       
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button3_Click(object sender, EventArgs e)
