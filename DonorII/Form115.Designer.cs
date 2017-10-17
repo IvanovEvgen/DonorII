@@ -39,10 +39,10 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -161,16 +161,6 @@
             this.panel1.Size = new System.Drawing.Size(600, 60);
             this.panel1.TabIndex = 17;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::DonorII.Properties.Resources.Рисунок1;
-            this.pictureBox1.Location = new System.Drawing.Point(-14, 282);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(208, 149);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 26;
-            this.pictureBox1.TabStop = false;
-            // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.SystemColors.ScrollBar;
@@ -182,6 +172,7 @@
             this.button4.TabIndex = 47;
             this.button4.Text = "Logout";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button1
             // 
@@ -205,6 +196,16 @@
             this.label1.Size = new System.Drawing.Size(135, 30);
             this.label1.TabIndex = 45;
             this.label1.Text = "Донор 2017";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::DonorII.Properties.Resources.Рисунок1;
+            this.pictureBox1.Location = new System.Drawing.Point(-14, 282);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(208, 149);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 26;
+            this.pictureBox1.TabStop = false;
             // 
             // Form115
             // 

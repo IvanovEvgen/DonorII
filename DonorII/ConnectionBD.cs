@@ -12,7 +12,8 @@ namespace DonorII
         public static SqlConnection ConnBD()
         {
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ноут\Desktop\DonorII\DonorII\Database1.mdf;Integrated Security=True";
+            //conn.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ноут\Desktop\DonorII\DonorII\Database1.mdf;Integrated Security=True"; //Жека
+            conn.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database1.mdf;Integrated Security=True"; // Света
             return conn;
         }
     }
