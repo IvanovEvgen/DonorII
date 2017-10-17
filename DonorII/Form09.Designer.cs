@@ -37,8 +37,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.bloodTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.database1DataSet = new DonorII.Database1DataSet();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.polBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -57,15 +60,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.database1DataSet = new DonorII.Database1DataSet();
-            this.polBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.polTableAdapter = new DonorII.Database1DataSetTableAdapters.PolTableAdapter();
-            this.bloodTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bloodTypeTableAdapter = new DonorII.Database1DataSetTableAdapters.BloodTypeTableAdapter();
-            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bloodTypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.polBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bloodTypeBindingSource)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label14
@@ -94,6 +94,7 @@
             this.textBox5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox5.Location = new System.Drawing.Point(445, 236);
             this.textBox5.Name = "textBox5";
+            this.textBox5.PasswordChar = '*';
             this.textBox5.Size = new System.Drawing.Size(130, 27);
             this.textBox5.TabIndex = 50;
             // 
@@ -102,6 +103,7 @@
             this.textBox4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox4.Location = new System.Drawing.Point(445, 203);
             this.textBox4.Name = "textBox4";
+            this.textBox4.PasswordChar = '*';
             this.textBox4.Size = new System.Drawing.Size(130, 27);
             this.textBox4.TabIndex = 49;
             // 
@@ -145,15 +147,27 @@
             this.comboBox3.TabIndex = 53;
             this.comboBox3.ValueMember = "BloodType";
             // 
+            // bloodTypeBindingSource
+            // 
+            this.bloodTypeBindingSource.DataMember = "BloodType";
+            this.bloodTypeBindingSource.DataSource = this.database1DataSet;
+            // 
+            // database1DataSet
+            // 
+            this.database1DataSet.DataSetName = "Database1DataSet";
+            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // comboBox2
             // 
             this.comboBox2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Не здоров",
+            "Здоров"});
             this.comboBox2.Location = new System.Drawing.Point(123, 270);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(163, 28);
             this.comboBox2.TabIndex = 52;
-            this.comboBox2.Text = "Не здоров";
             // 
             // comboBox1
             // 
@@ -166,6 +180,11 @@
             this.comboBox1.Size = new System.Drawing.Size(163, 28);
             this.comboBox1.TabIndex = 51;
             this.comboBox1.ValueMember = "Gender";
+            // 
+            // polBindingSource
+            // 
+            this.polBindingSource.DataMember = "Pol";
+            this.polBindingSource.DataSource = this.database1DataSet;
             // 
             // textBox3
             // 
@@ -357,24 +376,9 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // database1DataSet
-            // 
-            this.database1DataSet.DataSetName = "Database1DataSet";
-            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // polBindingSource
-            // 
-            this.polBindingSource.DataMember = "Pol";
-            this.polBindingSource.DataSource = this.database1DataSet;
-            // 
             // polTableAdapter
             // 
             this.polTableAdapter.ClearBeforeFill = true;
-            // 
-            // bloodTypeBindingSource
-            // 
-            this.bloodTypeBindingSource.DataMember = "BloodType";
-            this.bloodTypeBindingSource.DataSource = this.database1DataSet;
             // 
             // bloodTypeTableAdapter
             // 
@@ -413,11 +417,11 @@
             this.Name = "Form09";
             this.Text = "Редактирование профиля";
             this.Load += new System.EventHandler(this.Form09_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bloodTypeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.polBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bloodTypeBindingSource)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

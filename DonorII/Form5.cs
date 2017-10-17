@@ -33,7 +33,8 @@ namespace DonorII
                 SqlCommand command = new SqlCommand();
                 command.Connection = ConnectionBD.ConnBD();
                 command.Connection.Open();
-                string load = @"INSERT INTO GivingBlood(IDUsers, StartDataTime, Cost) VALUES('" + IDUsers + "', '" + Convert.ToDateTime(dateTimePicker1.Text) + "', '" +Convert.ToDouble(textBox1.Text) + "')";
+                string[] data = dateTimePicker1.Value.ToString().Split(' ');
+                string load = @"INSERT INTO GivingBlood(IDUsers, StartDataTime, Cost) VALUES('" + IDUsers + "', '" + data[0] + "', '" +Convert.ToDouble(textBox1.Text) + "')";
                 command.CommandText = load;
                 command.ExecuteNonQuery();
                 command.Connection.Close();
