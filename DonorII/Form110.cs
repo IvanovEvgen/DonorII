@@ -13,11 +13,14 @@ namespace DonorII
 {
     public partial class Form110 : Form
     {
+        System.Data.DataTable dt;
         string IDuser;
         public Form110(string IDuser)
         {
             InitializeComponent();
             this.IDuser = IDuser;
+            load_table();
+            pol();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -36,53 +39,65 @@ namespace DonorII
 
         private void Form110_Load(object sender, EventArgs e)
         {
-
+           
         }
-        public void load_table_worker()
+        public void load_table()
         {
             SqlCommand command = new SqlCommand();
             command.Connection = ConnectionBD.ConnBD();
             command.Connection.Open();
-            string load = @"SELECT FirstName, LastName, PolID, DateOfBirth, Health, BloodTypeID FROM Users WHERE Email = '" + IDuser + "')";
+            string load = @"Select GivingBlood.StartDataTime, GivingBlood.Cost, BloodType.BloodType, Users.Health 
+                            From GivingBlood JOIN Users ON GivingBlood.IDUsers = Users.Email JOIN BloodType ON (BloodType.BloodType = Users.BloodTypeID) Where GivingBlood.IDUsers = '" + IDuser + "' and BloodType.BloodType = Users.BloodTypeID";
             command.CommandText = load;
-            command.ExecuteReader();
-       //     command.ExecuteNonQuery();
+
             SqlDataAdapter da = new SqlDataAdapter(command);
-            System.Data.DataTable dt = new System.Data.DataTable();
+            dt = new System.Data.DataTable();
             da.Fill(dt);
             dataGridView1.DataSource = dt;
             dataGridView1.RowsDefaultCellStyle.WrapMode = DataGridViewTriState.True;
-            dataGridView1.Columns[0].Width = 55;
-            dataGridView1.Columns[0].HeaderText = "ID";
-            dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridView1.Columns[0].HeaderText = "Дата";
             dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridView1.Columns[1].HeaderText = "Фамилия";
+            dataGridView1.Columns[1].HeaderText = "Количество крови в мл";
             dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridView1.Columns[2].HeaderText = "Имя";
+            dataGridView1.Columns[2].HeaderText = "Группа крови";
             dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridView1.Columns[3].HeaderText = "Отчество";
-            dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridView1.Columns[4].HeaderText = "Адрес регистрации";
-            dataGridView1.Columns[5].Width = 55;
-            dataGridView1.Columns[5].HeaderText = "ID";
-            dataGridView1.Columns[5].Visible = false;
-            dataGridView1.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridView1.Columns[6].HeaderText = "Должность";
-            dataGridView1.Columns[7].Width = 55;
-            dataGridView1.Columns[7].HeaderText = "ID";
-            dataGridView1.Columns[7].Visible = false;
-            dataGridView1.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridView1.Columns[8].HeaderText = "Отдел";
-            //label13.Text = IDuser;
-            //textBox2.Text = rid["FirstName"].ToString();
-            //textBox3.Text = rid["LastName"].ToString();
-            //comboBox1.SelectedValue = rid["PolID"].ToString();
-            //dateTimePicker1.Value = Convert.ToDateTime(rid["DateOfBirth"]);
-            //comboBox2.SelectedValue = rid["Health"].ToString();
-            //comboBox3.SelectedValue = rid["BloodTypeID"].ToString();
+            dataGridView1.Columns[3].HeaderText = "Здоровье";
+        }
+
+        public void pol()
+        {
+            SqlCommand command = new SqlCommand();
+            command.Connection = ConnectionBD.ConnBD();
+            command.Connection.Open();
+            string load = @"Select Users.PolID, Users.DateOfBirth From Users  Where Users.Email = '" + IDuser + "'";
+            command.CommandText = load;
+            
+            var rid = command.ExecuteReader();
+            rid.Read();
+            label6.Text = rid["PolID"].ToString();
+            DateTime bd = Convert.ToDateTime(rid["DateOfBirth"]);
+            
             command.Connection.Close();
-
-
+            var t = DateTime.Now.Year - bd.Year;
+            if (t >= 18 || t <= 21)
+            {
+                label7.Text = "18-21";
+            }
+            else if (t >= 22 || t <= 28)
+            {
+                label7.Text = "22-28";
+            }
+            else if (t >= 29 || t <= 36)
+            {
+                label7.Text = "29-36";
+            }
+            else if (t >= 37)
+            {
+                label7.Text = "37-..";
+            }
+          
+         
         }
     }
 }

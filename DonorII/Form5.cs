@@ -28,19 +28,19 @@ namespace DonorII
         private void button2_Click(object sender, EventArgs e)
         {
             //Проверка дат
-            try
-            {
+            //try
+            //{
                 SqlCommand command = new SqlCommand();
                 command.Connection = ConnectionBD.ConnBD();
                 command.Connection.Open();
-                string load = @"INSERT INTO GivingBlood(IDUsers, StartDataTime, Cost) VALUES('" + IDUsers + "', '" + dateTimePicker1.Value + "', '" +Math.Round(Convert.ToDouble(textBox1.Text),2) + "')";
+                string load = @"INSERT INTO GivingBlood(IDUsers, StartDataTime, Cost) VALUES('" + IDUsers + "', '" + Convert.ToDateTime(dateTimePicker1.Text) + "', '" +Convert.ToDouble(textBox1.Text) + "')";
                 command.CommandText = load;
                 command.ExecuteNonQuery();
                 command.Connection.Close();
                 MessageBox.Show("Вы успешно записаны!");
                 this.Close();
-            }
-            catch { MessageBox.Show("Ошибка!"); }
+            //}
+            //catch { MessageBox.Show("Ошибка!"); }
 
             var f = new Form6();
             f.ShowDialog();
