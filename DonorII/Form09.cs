@@ -94,12 +94,12 @@ namespace DonorII
             // TODO: данная строка кода позволяет загрузить данные в таблицу "database1DataSet.Pol". При необходимости она может быть перемещена или удалена.
             this.polTableAdapter.Fill(this.database1DataSet.Pol);
             //Загрузка данных пользователя
- //           try
- //           {
+            try
+            {
                 SqlCommand command = new SqlCommand();
                 command.Connection = ConnectionBD.ConnBD();
                 command.Connection.Open();
-                string load = @"SELECT FirstName, LastName, PolID, DateOfBirth, Health, BloodTypeID FROM Users WHERE Email = '" + IDuser + "')";
+                string load = @"SELECT FirstName, LastName, PolID, DateOfBirth, Health, BloodTypeID FROM Users WHERE Email = '" + IDuser + "'";
                 command.CommandText = load;
                 var rid = command.ExecuteReader();
                 rid.Read();
@@ -111,8 +111,8 @@ namespace DonorII
                 comboBox2.SelectedValue = rid["Health"].ToString();
                 comboBox3.SelectedValue = rid["BloodTypeID"].ToString();
                 command.Connection.Close();
-//            }
-//            catch { MessageBox.Show("Ошибка!"); }
+            }
+            catch { MessageBox.Show("Ошибка!"); }
         }
     }
 }
