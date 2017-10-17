@@ -37,14 +37,13 @@ namespace DonorII
                 command.CommandText = load;
                 command.ExecuteNonQuery();
                 command.Connection.Close();
-                MessageBox.Show("Вы успешно записаны!");
+
+                var f = new Form6();
+                f.ShowDialog();
                 this.Close();
             //}
             //catch { MessageBox.Show("Ошибка!"); }
 
-            var f = new Form6();
-            f.ShowDialog();
-            this.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
