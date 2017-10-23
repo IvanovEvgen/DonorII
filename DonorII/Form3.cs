@@ -110,20 +110,6 @@ namespace DonorII
                  }
              }
              catch { MessageBox.Show("Ошибка!"); }
-             
-            foreach (Form f in Application.OpenForms)
-            {
-                if (f.Name == "Form07")
-                {
-                    //  MessageBox.Show("Уже открыта");
-                    f.Activate();
-                    this.Close();
-                    return;
-                }
-            }
-            Form07 f1 = new Form07();
-            f1.Show();
-            this.Close();
         }
 
         private void textBox2_KeyDown(object sender, KeyEventArgs e)

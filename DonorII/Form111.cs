@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace DonorII
 {
@@ -50,6 +51,12 @@ namespace DonorII
         private void Form111_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Form112 obj = new Form112();
+            obj.ShowDialog();
         }
     }
 }
