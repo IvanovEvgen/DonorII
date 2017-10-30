@@ -12,9 +12,11 @@ namespace DonorII
 {
     public partial class Form115 : Form
     {
-        public Form115()
+        string FIO;
+        public Form115(string fio)
         {
             InitializeComponent();
+            this.FIO = fio;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -36,7 +38,7 @@ namespace DonorII
 
         private void Form115_Load(object sender, EventArgs e)
         {
-
+            label4.Text = FIO;
         }
     }
 }

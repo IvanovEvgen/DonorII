@@ -42,7 +42,7 @@ namespace DonorII
             command.Connection = ConnectionBD.ConnBD();
             command.Connection.Open();
             string load = @"Select Users.FirstName,  Users.LastName, Users.Email, sum(Cost) AS SUMM FROM Users, GivingBlood WHERE (Users.Email = GivingBlood.IDUsers )
-GROUP BY Users.Email, Users.FirstName, Users.LastName";
+            GROUP BY Users.Email, Users.FirstName, Users.LastName";
             command.CommandText = load;
 
             SqlDataAdapter da = new SqlDataAdapter(command);
@@ -50,38 +50,72 @@ GROUP BY Users.Email, Users.FirstName, Users.LastName";
             da.Fill(dt);
             dataGridView1.DataSource = dt;
             dataGridView1.RowsDefaultCellStyle.WrapMode = DataGridViewTriState.True;
-            dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dataGridView1.Columns[0].HeaderText = "Имя";
-            dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dataGridView1.Columns[1].HeaderText = "Фамилия";
-            dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dataGridView1.Columns[2].HeaderText = "e-Mail";
-            dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            DataGridViewButtonColumn obj = new DataGridViewButtonColumn() { HeaderText = "Управление", UseColumnTextForButtonValue = true, Text = "Edit" };
+            dataGridView1.Columns.Add(obj);
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                dataGridView1[3, i].Tag = dataGridView1[2, i].Value.ToString();
+            }
+            label5.Text = dataGridView1.RowCount.ToString();
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch(comboBox2.SelectedItem)
+            {
+                case "Имя": dataGridView1.Sort(dataGridView1.Columns[0], System.ComponentModel.ListSortDirection.Descending); break;
+                case "Фамилия":dataGridView1.Sort(dataGridView1.Columns[1], System.ComponentModel.ListSortDirection.Descending); break;
+                case "E-mail": dataGridView1.Sort(dataGridView1.Columns[2], System.ComponentModel.ListSortDirection.Descending); break;
+                case "Количество": dataGridView1.Sort(dataGridView1.Columns[3], System.ComponentModel.ListSortDirection.Descending); break;
+            }
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SqlCommand command = new SqlCommand();
+            command.Connection = ConnectionBD.ConnBD();
+            command.Connection.Open();
+            string load = @"Select Users.FirstName,  Users.LastName, Users.Email, sum(Cost) AS SUMM FROM Users, GivingBlood WHERE (Users.Email = GivingBlood.IDUsers)
+            GROUP BY Users.Email, Users.FirstName, Users.LastName";
+            command.CommandText = load;
+
+            SqlDataAdapter da = new SqlDataAdapter(command);
+            dt = new System.Data.DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+            dataGridView1.RowsDefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            dataGridView1.Columns[0].HeaderText = "Имя";
+            dataGridView1.Columns[1].HeaderText = "Фамилия";
+            dataGridView1.Columns[2].HeaderText = "e-Mail";
             dataGridView1.Columns[3].HeaderText = "Сумма сданной крови";
 
             label5.Text = dataGridView1.RowCount.ToString();
 
-            //Не Сюда пока
-            //try
-            //{
-            //    SqlCommand command = new SqlCommand();
-            //    command.Connection = ConnectionBD.ConnBD();
-            //    command.Connection.Open();
-            //    string load = @"SELECT FirstName, LastName, PolID, DateOfBirth, Health, BloodTypeID FROM Users WHERE Email = '" + IDuser + "'";
-            //    command.CommandText = load;
-            //    var rid = command.ExecuteReader();
-            //    rid.Read();
+            for(int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                if (dataGridView1[3, i].Value.ToString() != comboBox3.SelectedItem.ToString()) { dataGridView1.Rows.Remove(dataGridView1.Rows[i]); i--; }
+                else if (comboBox3.SelectedIndex == 10)
+                {
+                    if (Convert.ToDouble(dataGridView1[3, i].Value) < 550){ dataGridView1.Rows.Remove(dataGridView1.Rows[i]); i--; }
+                }
+            }
+        }
 
-            //    label13.Text = IDuser;
-            //    textBox2.Text = rid["FirstName"].ToString();
-            //    textBox3.Text = rid["LastName"].ToString();
-            //    comboBox1.SelectedValue = rid["PolID"].ToString();
-            //    dateTimePicker1.Value = Convert.ToDateTime(rid["DateOfBirth"]);
-            //    comboBox2.SelectedItem = rid["Health"].ToString();
-            //    comboBox3.SelectedValue = rid["BloodTypeID"].ToString();
-            //    command.Connection.Close();
-            //}
-            //catch { MessageBox.Show("Ошибка!"); }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form112_Load(sender, e);
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if ((((DataGridView)sender).Rows[e.RowIndex].Cells[e.ColumnIndex] as DataGridViewButtonCell) != null)
+            {
+                Form113 obj = new Form113(dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString());
+                obj.ShowDialog();
+            }
         }
     }
 }

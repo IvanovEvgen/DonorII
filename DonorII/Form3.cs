@@ -45,37 +45,11 @@ namespace DonorII
 
         private void button3_Click(object sender, EventArgs e)
         {
-
-            foreach (Form f in Application.OpenForms)
-            {
-                if (f.Name == "Form1")
-                {
-                    //  MessageBox.Show("Уже открыта");
-                    f.Activate();
-                    this.Close();
-                    return;
-                }
-            }
-            Form1 f1 = new Form1();
-            f1.Show();
             this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            foreach (Form f in Application.OpenForms)
-            {
-                if (f.Name == "Form1")
-                {
-                    //  MessageBox.Show("Уже открыта");
-                    f.Activate();
-                    this.Close();
-                    return;
-                }
-            }
-            Form1 f1 = new Form1();
-            f1.Show();
             this.Close();
         }
 
